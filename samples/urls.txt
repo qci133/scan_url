@@ -1,0 +1,15 @@
+http://d.youth.cn/sk/201705/t20170521_9831740.htm
+https://www.baidu.com/s?wd=%E4%BD%A0%E5%A5%BD&rsv_spt=1&rsv_iqid=0xae67a952000431ad&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=6&rsv_sug1=3&rsv_sug7=100&rsv_sug2=0&inputT=739&rsv_sug4=1592
+http://www.baidu.com/s?wd=%E4%BD%A0%E5%A5%BD&rsv_spt=1&rsv_iqid=0xae67a952000431ad&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=6&rsv_sug1=3&rsv_sug7=100&rsv_sug2=0&inputT=739&rsv_sug4=1592
+https://docs.python.org/3/library/urllib.parse.html
+http://blog.csdn.net/yatere/article/details/6655445
+http://aosabook.org/en/500L/a-web-crawler-with-asyncio-coroutines.html
+http://python.usyiyi.cn/translate/python_352/library/asyncio-eventloop.html
+http://www.jianshu.com/p/01431e72b361
+http://www.freebuf.com/sectool/125984.html
+https://github.com/bartblaze/Disable-Intel-AMT
+http://www.freebuf.com/articles/system/134055.html
+https://java.quanke.name/6.8%20final%E5%85%B3%E9%94%AE%E5%AD%97.html
+https://zhuanlan.zhihu.com/p/22246193?refer=python-cn
+http://freemind.pluskid.org/machine-learning/deep-learning-and-shallow-learning/
+https://zhuanlan.zhihu.com/p/21707113
