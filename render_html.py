@@ -5,20 +5,27 @@ import itertools
 from selenium import webdriver
 import multiprocessing
 
-DRIVERS = [webdriver.PhantomJS() for _ in range(multiprocessing.cpu_count())]
-for one_driver in DRIVERS:
-    one_driver.implicitly_wait(10)
-    one_driver.set_page_load_timeout(10)
+
+DRIVER = None
 
 
 def render(paras):
+    global DRIVER
     html_url, out_path, file_index = paras
-    c_process = multiprocessing.current_process()
-    process_id = c_process._identity[0] - 1
-    driver = DRIVERS[process_id]
-    driver.get(html_url)
-    driver.save_screenshot(out_path)
-    print('worker-{} processed {}'.format(process_id, file_index))
+    if DRIVER is None:
+        DRIVER = webdriver.PhantomJS()
+        DRIVER.implicitly_wait(10)
+        DRIVER.set_page_load_timeout(10)
+        DRIVER.viewportSize = {'width': 1280, 'height': 800}
+        DRIVER.maximize_window()
+    try:
+        DRIVER.get(html_url)
+        DRIVER.save_screenshot(out_path)
+        c_process = multiprocessing.current_process()
+        print('worker-{} processed {}'.format(c_process._identity[0] - 1, file_index))
+    except:
+        DRIVER.close()
+        DRIVER = None
 
 
 if __name__ == '__main__':
@@ -42,7 +49,7 @@ if __name__ == '__main__':
     workers.close()
     workers.join()
 
-    for one_driver in DRIVERS:
+    for one_driver in DRIVER:
         one_driver.quit()
 
     end = time.time()
