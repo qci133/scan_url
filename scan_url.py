@@ -9,6 +9,8 @@ import sys
 import os
 import traceback
 import logging
+# import contextlib   # TODO: read contextmanager
+# import sched    # TODO: read the source code of schedule
 
 
 LOGGER = logging.getLogger(__name__)
@@ -44,11 +46,8 @@ class Scanner:
         try:
             while True:
                 url = await self.queue.get()
-                LOGGER.warning('get a url %r', url)
                 await self.detect(url)
-                LOGGER.warning('begin task_done url %r', url)
                 self.queue.task_done()
-                LOGGER.warning('finished task_done url %r', url)
         except asyncio.CancelledError:
             pass
         except Exception as e:
@@ -88,9 +87,7 @@ class Scanner:
         has_exception = False
         try:
             if response.status != 404:
-                LOGGER.warning('begin read url %r', url)
                 resp_body = await response.read()
-                LOGGER.warning('end read url %r', url)
                 self.results.append((url, resp_body))
                 LOGGER.info('Success detecting url %r', url)
         except Exception as e:
